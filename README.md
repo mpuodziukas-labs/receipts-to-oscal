@@ -1,5 +1,7 @@
 # receipts-to-oscal
 
+Proves: gate receipts become an OSCAL 1.1.x assessment-results document with a hash chain over the evidence, and the verifier exits 1 on any tamper. Verify in 60s: `bash check.sh`.
+
 Turns the receipts your automated gates already write (gate name, exit code, timestamp, commit sha)
 into an OSCAL 1.1.x assessment-results document, with a hash chain over the evidence and a verifier
 that exits 1 on any tamper. Python 3 standard library and bash only. Nothing to install.
