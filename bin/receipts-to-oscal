@@ -1,0 +1,64 @@
+#!/usr/bin/env python3
+"""receipts-to-oscal RECEIPTS_DIR CONTROL_MAP [--now RFC3339] [--max-age-hours N] [--require-all] [-o FILE]
+
+Reads gate receipts (gate, rc, ts, sha) and a control map, writes an OSCAL 1.1.x assessment-results
+document. A control with no receipt is not-assessed, never satisfied; a stale or failing receipt is
+not-satisfied. A mapping, not an attestation or audit opinion.
+
+Exit: 0 report written; 1 with --require-all when any control is not satisfied; 2 bad input
+(malformed receipt, empty receipts dir, bad control map); 3 internal error (own output failed the check).
+"""
+import argparse
+import json
+import os
+import sys
+from datetime import datetime, timedelta, timezone
+
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.realpath(__file__)), "..", "lib"))
+import oscal_build  # noqa: E402
+import oscal_check  # noqa: E402
+import receipts  # noqa: E402
+import rfc3339  # noqa: E402
+
+
+def main(argv):
+    ap = argparse.ArgumentParser(prog="receipts-to-oscal")
+    ap.add_argument("receipts_dir")
+    ap.add_argument("control_map")
+    ap.add_argument("--now", help="assessment time, RFC 3339 (default: the current UTC time)")
+    ap.add_argument("--max-age-hours", type=float, default=168.0, help="older receipts are stale (default 168)")
+    ap.add_argument("--require-all", action="store_true", help="exit 1 unless every control is satisfied")
+    ap.add_argument("-o", "--output", help="write the document here instead of stdout")
+    a = ap.parse_args(argv)
+    now = rfc3339.parse(a.now) if a.now else datetime.now(timezone.utc).replace(microsecond=0)
+    if now is None or a.max_age_hours <= 0:
+        print("receipts-to-oscal: input error: --now must be RFC 3339 and --max-age-hours positive", file=sys.stderr)
+        return 2
+    try:
+        recs = receipts.load_receipts(a.receipts_dir)
+        rows, map_sha = receipts.load_map(a.control_map)
+    except receipts.InputError as exc:
+        print("receipts-to-oscal: input error: %s" % exc, file=sys.stderr)
+        return 2
+    doc, verdicts = oscal_build.build(recs, rows, now, timedelta(hours=a.max_age_hours), map_sha)
+    _, errors = oscal_check.check(doc)
+    if errors:
+        print("receipts-to-oscal: internal error: own output failed the structural check: %s" % errors[0], file=sys.stderr)
+        return 3
+    text = json.dumps(doc, indent=2) + "\n"
+    if a.output:
+        with open(a.output, "w") as fh:
+            fh.write(text)
+    else:
+        sys.stdout.write(text)
+    counts = {"satisfied": 0, "not-satisfied": 0, "not-assessed": 0}
+    for ctl, status, reason in verdicts:
+        counts[status] += 1
+        print("%-13s %-14s %-12s %s" % (status, ctl["framework"], ctl["id"], reason), file=sys.stderr)
+    print("receipts: %d, controls: %d: satisfied %d, not-satisfied %d, not-assessed %d"
+          % (len(recs), len(verdicts), counts["satisfied"], counts["not-satisfied"], counts["not-assessed"]), file=sys.stderr)
+    return 1 if a.require_all and counts["satisfied"] != len(verdicts) else 0
+
+
+if __name__ == "__main__":
+    sys.exit(main(sys.argv[1:]))

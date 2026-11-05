@@ -1,0 +1,45 @@
+#!/usr/bin/env python3
+"""oscal-validate FILE
+
+Stdlib structural check of the fields receipts-to-oscal emits, then compliance-trestle if it is
+importable. When trestle is not installed it prints 'trestle: SKIPPED (not installed)'.
+Exit: 0 both passed or trestle skipped; 1 structural or trestle failure; 2 usage or unreadable file.
+"""
+import argparse
+import json
+import os
+import sys
+
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.realpath(__file__)), "..", "lib"))
+import oscal_check  # noqa: E402
+
+
+def main(argv):
+    ap = argparse.ArgumentParser(prog="oscal-validate")
+    ap.add_argument("file")
+    a = ap.parse_args(argv)
+    try:
+        with open(a.file, "rb") as fh:
+            raw = fh.read()
+    except OSError as exc:
+        print("oscal-validate: cannot read %s: %s" % (a.file, exc.strerror), file=sys.stderr)
+        return 2
+    try:
+        n, errors = oscal_check.check(json.loads(raw.decode("utf-8")))
+    except ValueError:
+        n, errors = 1, ["document is not valid JSON"]
+    except (TypeError, AttributeError, KeyError):
+        n, errors = 1, ["document has an unexpected shape"]
+    if errors:
+        print("structural: FAIL (%d problems in %d checks)" % (len(errors), n))
+        for e in errors:
+            print("  " + e)
+    else:
+        print("structural: %d/%d checks pass" % (n, n))
+    line, trestle_ok = oscal_check.trestle(a.file)
+    print(line)
+    return 0 if not errors and trestle_ok else 1
+
+
+if __name__ == "__main__":
+    sys.exit(main(sys.argv[1:]))

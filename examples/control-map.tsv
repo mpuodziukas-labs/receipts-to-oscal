@@ -1,0 +1,10 @@
+framework	control_id	gate	title
+NIST-800-53r5	CM-3	config-change-review	Configuration change control
+NIST-800-53r5	SI-7	artifact-hash-verify	Software, firmware and information integrity
+NIST-800-53r5	SA-11	unit-tests	Developer testing and evaluation
+NIST-800-53r5	SA-11	eval-regression	Developer testing and evaluation
+NIST-800-53r5	AU-10	signed-commit-check	Non-repudiation
+NIST-800-53r5	RA-5	dependency-scan	Vulnerability monitoring and scanning
+NIST-AI-RMF	MEASURE 2.1	eval-set-manifest	Test sets, metrics and tools documented
+NIST-AI-RMF	MEASURE 2.5	eval-regression	System shown to be valid and reliable
+NIST-AI-RMF	MEASURE 2.7	adversarial-eval	Security and resilience evaluated

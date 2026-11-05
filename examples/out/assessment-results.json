@@ -1,0 +1,728 @@
+{
+  "assessment-results": {
+    "uuid": "7b182493-a41a-5539-bd1f-ec56624389ea",
+    "metadata": {
+      "title": "Assessment results from gate receipts",
+      "last-modified": "2026-11-05T00:00:00Z",
+      "version": "1",
+      "oscal-version": "1.1.2"
+    },
+    "import-ap": {
+      "href": "urn:receipts-to-oscal:no-assessment-plan",
+      "remarks": "Placeholder. No OSCAL assessment plan exists for this run."
+    },
+    "results": [
+      {
+        "uuid": "f88232d1-acd9-579b-9ec1-74a26c43d409",
+        "title": "Gate receipts assessed against the control map",
+        "description": "Each finding is derived from gate receipts only. A control with no receipt is not-assessed. This is a mapping, not an attestation or audit opinion.",
+        "start": "2026-11-05T00:00:00Z",
+        "end": "2026-11-05T00:00:00Z",
+        "props": [
+          {
+            "name": "assessed-at",
+            "value": "2026-11-05T00:00:00Z",
+            "ns": "urn:receipts-to-oscal:1"
+          },
+          {
+            "name": "max-age-hours",
+            "value": "168",
+            "ns": "urn:receipts-to-oscal:1"
+          },
+          {
+            "name": "control-map-sha256",
+            "value": "602500629bbd6ca2b0b1479f74aa2310ba1030f888e95bc6c833b7486e051d92",
+            "ns": "urn:receipts-to-oscal:1"
+          },
+          {
+            "name": "receipt-count",
+            "value": "7",
+            "ns": "urn:receipts-to-oscal:1"
+          },
+          {
+            "name": "chain-head",
+            "value": "a0547817d2b64ac1b347f4c47679bf2ef8add49941901a7bf57efb1317bb0ada",
+            "ns": "urn:receipts-to-oscal:1"
+          }
+        ],
+        "reviewed-controls": {
+          "control-selections": [
+            {
+              "include-controls": [
+                {
+                  "control-id": "cm-3"
+                },
+                {
+                  "control-id": "si-7"
+                },
+                {
+                  "control-id": "sa-11"
+                },
+                {
+                  "control-id": "au-10"
+                },
+                {
+                  "control-id": "ra-5"
+                },
+                {
+                  "control-id": "measure-2.1"
+                },
+                {
+                  "control-id": "measure-2.5"
+                },
+                {
+                  "control-id": "measure-2.7"
+                }
+              ]
+            }
+          ]
+        },
+        "observations": [
+          {
+            "uuid": "a9eef322-447d-5fc5-981b-dc9fe47af4b0",
+            "title": "gate adversarial-eval",
+            "description": "Gate adversarial-eval returned rc=0 at 2026-10-20T08:00:00Z against 0123456789abcdef0123456789abcdef01234567.",
+            "methods": [
+              "TEST"
+            ],
+            "collected": "2026-10-20T08:00:00Z",
+            "props": [
+              {
+                "name": "gate",
+                "value": "adversarial-eval",
+                "ns": "urn:receipts-to-oscal:1"
+              },
+              {
+                "name": "rc",
+                "value": "0",
+                "ns": "urn:receipts-to-oscal:1"
+              },
+              {
+                "name": "subject-sha",
+                "value": "0123456789abcdef0123456789abcdef01234567",
+                "ns": "urn:receipts-to-oscal:1"
+              },
+              {
+                "name": "receipt-file",
+                "value": "adversarial-eval.json",
+                "ns": "urn:receipts-to-oscal:1"
+              },
+              {
+                "name": "receipt-sha256",
+                "value": "c568c167d4ddfc0b9032aadd08ade7810df0c567adf39b43251b8ea73e2626d4",
+                "ns": "urn:receipts-to-oscal:1"
+              },
+              {
+                "name": "chain-prev",
+                "value": "0000000000000000000000000000000000000000000000000000000000000000",
+                "ns": "urn:receipts-to-oscal:1"
+              },
+              {
+                "name": "chain-hash",
+                "value": "f8308c7d266c9b39103ea4c4abd72c52353bfdc6779296781e615fa5f01e5514",
+                "ns": "urn:receipts-to-oscal:1"
+              }
+            ]
+          },
+          {
+            "uuid": "e18b9fa4-326a-5a10-a882-e92730a9da69",
+            "title": "gate config-change-review",
+            "description": "Gate config-change-review returned rc=0 at 2026-11-04T09:00:00Z against 0123456789abcdef0123456789abcdef01234567.",
+            "methods": [
+              "TEST"
+            ],
+            "collected": "2026-11-04T09:00:00Z",
+            "props": [
+              {
+                "name": "gate",
+                "value": "config-change-review",
+                "ns": "urn:receipts-to-oscal:1"
+              },
+              {
+                "name": "rc",
+                "value": "0",
+                "ns": "urn:receipts-to-oscal:1"
+              },
+              {
+                "name": "subject-sha",
+                "value": "0123456789abcdef0123456789abcdef01234567",
+                "ns": "urn:receipts-to-oscal:1"
+              },
+              {
+                "name": "receipt-file",
+                "value": "config-change-review.json",
+                "ns": "urn:receipts-to-oscal:1"
+              },
+              {
+                "name": "receipt-sha256",
+                "value": "f33e83b360132a62692af5d6dab83e8c5efaa9efb6be6f14b74a475e49645684",
+                "ns": "urn:receipts-to-oscal:1"
+              },
+              {
+                "name": "chain-prev",
+                "value": "f8308c7d266c9b39103ea4c4abd72c52353bfdc6779296781e615fa5f01e5514",
+                "ns": "urn:receipts-to-oscal:1"
+              },
+              {
+                "name": "chain-hash",
+                "value": "4e4079a8af509c45fcae2ad5027535b5f91bfafd798316486cd292445c60cad0",
+                "ns": "urn:receipts-to-oscal:1"
+              }
+            ]
+          },
+          {
+            "uuid": "fa423c2e-b2e1-50d9-b4d7-c7f61f2f15eb",
+            "title": "gate artifact-hash-verify",
+            "description": "Gate artifact-hash-verify returned rc=0 at 2026-11-04T09:05:00Z against 0123456789abcdef0123456789abcdef01234567.",
+            "methods": [
+              "TEST"
+            ],
+            "collected": "2026-11-04T09:05:00Z",
+            "props": [
+              {
+                "name": "gate",
+                "value": "artifact-hash-verify",
+                "ns": "urn:receipts-to-oscal:1"
+              },
+              {
+                "name": "rc",
+                "value": "0",
+                "ns": "urn:receipts-to-oscal:1"
+              },
+              {
+                "name": "subject-sha",
+                "value": "0123456789abcdef0123456789abcdef01234567",
+                "ns": "urn:receipts-to-oscal:1"
+              },
+              {
+                "name": "receipt-file",
+                "value": "artifact-hash-verify.txt",
+                "ns": "urn:receipts-to-oscal:1"
+              },
+              {
+                "name": "receipt-sha256",
+                "value": "4aa90d101576b6fd14e80a439b53f42e34d1929f5adaf3b9b61242b474920997",
+                "ns": "urn:receipts-to-oscal:1"
+              },
+              {
+                "name": "chain-prev",
+                "value": "4e4079a8af509c45fcae2ad5027535b5f91bfafd798316486cd292445c60cad0",
+                "ns": "urn:receipts-to-oscal:1"
+              },
+              {
+                "name": "chain-hash",
+                "value": "33c2394749457ee359029b702a7a7201fe19094b1eedb1b2cec58bd65148f5dc",
+                "ns": "urn:receipts-to-oscal:1"
+              }
+            ]
+          },
+          {
+            "uuid": "f765124a-a365-5ed7-bb46-25fde7526dc8",
+            "title": "gate unit-tests",
+            "description": "Gate unit-tests returned rc=0 at 2026-11-04T09:10:00Z against 0123456789abcdef0123456789abcdef01234567.",
+            "methods": [
+              "TEST"
+            ],
+            "collected": "2026-11-04T09:10:00Z",
+            "props": [
+              {
+                "name": "gate",
+                "value": "unit-tests",
+                "ns": "urn:receipts-to-oscal:1"
+              },
+              {
+                "name": "rc",
+                "value": "0",
+                "ns": "urn:receipts-to-oscal:1"
+              },
+              {
+                "name": "subject-sha",
+                "value": "0123456789abcdef0123456789abcdef01234567",
+                "ns": "urn:receipts-to-oscal:1"
+              },
+              {
+                "name": "receipt-file",
+                "value": "unit-tests.tsv",
+                "ns": "urn:receipts-to-oscal:1"
+              },
+              {
+                "name": "receipt-sha256",
+                "value": "0e04e6789b370aee153b982199538f6da5430c3a41e5f97170fc043f205ede93",
+                "ns": "urn:receipts-to-oscal:1"
+              },
+              {
+                "name": "chain-prev",
+                "value": "33c2394749457ee359029b702a7a7201fe19094b1eedb1b2cec58bd65148f5dc",
+                "ns": "urn:receipts-to-oscal:1"
+              },
+              {
+                "name": "chain-hash",
+                "value": "db3f7e87ddd2954fec75117c297b626cbff884c51a83848ebc32483abd2244d5",
+                "ns": "urn:receipts-to-oscal:1"
+              }
+            ]
+          },
+          {
+            "uuid": "cf2e3dc7-6d5a-5cdf-b045-cba9d84b6edf",
+            "title": "gate eval-regression",
+            "description": "Gate eval-regression returned rc=0 at 2026-11-04T09:20:00Z against 0123456789abcdef0123456789abcdef01234567.",
+            "methods": [
+              "TEST"
+            ],
+            "collected": "2026-11-04T09:20:00Z",
+            "props": [
+              {
+                "name": "gate",
+                "value": "eval-regression",
+                "ns": "urn:receipts-to-oscal:1"
+              },
+              {
+                "name": "rc",
+                "value": "0",
+                "ns": "urn:receipts-to-oscal:1"
+              },
+              {
+                "name": "subject-sha",
+                "value": "0123456789abcdef0123456789abcdef01234567",
+                "ns": "urn:receipts-to-oscal:1"
+              },
+              {
+                "name": "receipt-file",
+                "value": "eval-regression.json",
+                "ns": "urn:receipts-to-oscal:1"
+              },
+              {
+                "name": "receipt-sha256",
+                "value": "9f3ff77bc5b51a68b1a9e03795edbc15b8d42717f5962352593a5603a6a49086",
+                "ns": "urn:receipts-to-oscal:1"
+              },
+              {
+                "name": "chain-prev",
+                "value": "db3f7e87ddd2954fec75117c297b626cbff884c51a83848ebc32483abd2244d5",
+                "ns": "urn:receipts-to-oscal:1"
+              },
+              {
+                "name": "chain-hash",
+                "value": "780ce542bdda567addf5415cba1d39602993d21b4ffb3d9e03b87f714ab847f5",
+                "ns": "urn:receipts-to-oscal:1"
+              }
+            ]
+          },
+          {
+            "uuid": "b69efa81-5316-5330-99fc-05e9d9cbb7e4",
+            "title": "gate signed-commit-check",
+            "description": "Gate signed-commit-check returned rc=0 at 2026-11-04T09:25:00Z against 0123456789abcdef0123456789abcdef01234567.",
+            "methods": [
+              "TEST"
+            ],
+            "collected": "2026-11-04T09:25:00Z",
+            "props": [
+              {
+                "name": "gate",
+                "value": "signed-commit-check",
+                "ns": "urn:receipts-to-oscal:1"
+              },
+              {
+                "name": "rc",
+                "value": "0",
+                "ns": "urn:receipts-to-oscal:1"
+              },
+              {
+                "name": "subject-sha",
+                "value": "0123456789abcdef0123456789abcdef01234567",
+                "ns": "urn:receipts-to-oscal:1"
+              },
+              {
+                "name": "receipt-file",
+                "value": "signed-commit-check.txt",
+                "ns": "urn:receipts-to-oscal:1"
+              },
+              {
+                "name": "receipt-sha256",
+                "value": "447b9fd79e69b1ecde821008a11fbfa7fb0a1876abbe6d6f1ce2ae0918f361e7",
+                "ns": "urn:receipts-to-oscal:1"
+              },
+              {
+                "name": "chain-prev",
+                "value": "780ce542bdda567addf5415cba1d39602993d21b4ffb3d9e03b87f714ab847f5",
+                "ns": "urn:receipts-to-oscal:1"
+              },
+              {
+                "name": "chain-hash",
+                "value": "3f60ea20a2fee93a7587fe1fa2e6062394ea4b6f606679c8a24b5b7595d9ee6a",
+                "ns": "urn:receipts-to-oscal:1"
+              }
+            ]
+          },
+          {
+            "uuid": "15af0e4b-6d5a-59a5-a0a8-8d4f7c833faf",
+            "title": "gate dependency-scan",
+            "description": "Gate dependency-scan returned rc=1 at 2026-11-04T09:30:00Z against 0123456789abcdef0123456789abcdef01234567.",
+            "methods": [
+              "TEST"
+            ],
+            "collected": "2026-11-04T09:30:00Z",
+            "props": [
+              {
+                "name": "gate",
+                "value": "dependency-scan",
+                "ns": "urn:receipts-to-oscal:1"
+              },
+              {
+                "name": "rc",
+                "value": "1",
+                "ns": "urn:receipts-to-oscal:1"
+              },
+              {
+                "name": "subject-sha",
+                "value": "0123456789abcdef0123456789abcdef01234567",
+                "ns": "urn:receipts-to-oscal:1"
+              },
+              {
+                "name": "receipt-file",
+                "value": "dependency-scan.txt",
+                "ns": "urn:receipts-to-oscal:1"
+              },
+              {
+                "name": "receipt-sha256",
+                "value": "b980383b0c654a7cef0c0317522080724ed3af0fccde0d12148897ef627c3394",
+                "ns": "urn:receipts-to-oscal:1"
+              },
+              {
+                "name": "chain-prev",
+                "value": "3f60ea20a2fee93a7587fe1fa2e6062394ea4b6f606679c8a24b5b7595d9ee6a",
+                "ns": "urn:receipts-to-oscal:1"
+              },
+              {
+                "name": "chain-hash",
+                "value": "6e36ba21acb981e5668b2fd4d98540f0dbecaa5646d25fa9fc0d6ab158b9a7fa",
+                "ns": "urn:receipts-to-oscal:1"
+              }
+            ]
+          }
+        ],
+        "findings": [
+          {
+            "uuid": "23a7499a-09fc-5ee8-8f0c-bee8de5c5030",
+            "title": "NIST-800-53r5 CM-3",
+            "description": "config-change-review: ok. Status satisfied (ok).",
+            "props": [
+              {
+                "name": "assessment-status",
+                "value": "satisfied",
+                "ns": "urn:receipts-to-oscal:1"
+              },
+              {
+                "name": "finding-reason",
+                "value": "ok",
+                "ns": "urn:receipts-to-oscal:1"
+              },
+              {
+                "name": "framework",
+                "value": "NIST-800-53r5",
+                "ns": "urn:receipts-to-oscal:1"
+              },
+              {
+                "name": "control-id",
+                "value": "CM-3",
+                "ns": "urn:receipts-to-oscal:1"
+              }
+            ],
+            "target": {
+              "type": "objective-id",
+              "target-id": "cm-3",
+              "status": {
+                "state": "satisfied",
+                "reason": "pass"
+              }
+            },
+            "related-observations": [
+              {
+                "observation-uuid": "e18b9fa4-326a-5a10-a882-e92730a9da69"
+              }
+            ]
+          },
+          {
+            "uuid": "307d037b-3ccf-53ff-91b2-10e0fae4cfdb",
+            "title": "NIST-800-53r5 SI-7",
+            "description": "artifact-hash-verify: ok. Status satisfied (ok).",
+            "props": [
+              {
+                "name": "assessment-status",
+                "value": "satisfied",
+                "ns": "urn:receipts-to-oscal:1"
+              },
+              {
+                "name": "finding-reason",
+                "value": "ok",
+                "ns": "urn:receipts-to-oscal:1"
+              },
+              {
+                "name": "framework",
+                "value": "NIST-800-53r5",
+                "ns": "urn:receipts-to-oscal:1"
+              },
+              {
+                "name": "control-id",
+                "value": "SI-7",
+                "ns": "urn:receipts-to-oscal:1"
+              }
+            ],
+            "target": {
+              "type": "objective-id",
+              "target-id": "si-7",
+              "status": {
+                "state": "satisfied",
+                "reason": "pass"
+              }
+            },
+            "related-observations": [
+              {
+                "observation-uuid": "fa423c2e-b2e1-50d9-b4d7-c7f61f2f15eb"
+              }
+            ]
+          },
+          {
+            "uuid": "d68c35c6-dba4-5f3a-9429-3c6422c2621e",
+            "title": "NIST-800-53r5 SA-11",
+            "description": "unit-tests: ok; eval-regression: ok. Status satisfied (ok).",
+            "props": [
+              {
+                "name": "assessment-status",
+                "value": "satisfied",
+                "ns": "urn:receipts-to-oscal:1"
+              },
+              {
+                "name": "finding-reason",
+                "value": "ok",
+                "ns": "urn:receipts-to-oscal:1"
+              },
+              {
+                "name": "framework",
+                "value": "NIST-800-53r5",
+                "ns": "urn:receipts-to-oscal:1"
+              },
+              {
+                "name": "control-id",
+                "value": "SA-11",
+                "ns": "urn:receipts-to-oscal:1"
+              }
+            ],
+            "target": {
+              "type": "objective-id",
+              "target-id": "sa-11",
+              "status": {
+                "state": "satisfied",
+                "reason": "pass"
+              }
+            },
+            "related-observations": [
+              {
+                "observation-uuid": "f765124a-a365-5ed7-bb46-25fde7526dc8"
+              },
+              {
+                "observation-uuid": "cf2e3dc7-6d5a-5cdf-b045-cba9d84b6edf"
+              }
+            ]
+          },
+          {
+            "uuid": "eb7d1d5a-8e2d-5705-9d86-3ba0da86a49f",
+            "title": "NIST-800-53r5 AU-10",
+            "description": "signed-commit-check: ok. Status satisfied (ok).",
+            "props": [
+              {
+                "name": "assessment-status",
+                "value": "satisfied",
+                "ns": "urn:receipts-to-oscal:1"
+              },
+              {
+                "name": "finding-reason",
+                "value": "ok",
+                "ns": "urn:receipts-to-oscal:1"
+              },
+              {
+                "name": "framework",
+                "value": "NIST-800-53r5",
+                "ns": "urn:receipts-to-oscal:1"
+              },
+              {
+                "name": "control-id",
+                "value": "AU-10",
+                "ns": "urn:receipts-to-oscal:1"
+              }
+            ],
+            "target": {
+              "type": "objective-id",
+              "target-id": "au-10",
+              "status": {
+                "state": "satisfied",
+                "reason": "pass"
+              }
+            },
+            "related-observations": [
+              {
+                "observation-uuid": "b69efa81-5316-5330-99fc-05e9d9cbb7e4"
+              }
+            ]
+          },
+          {
+            "uuid": "ef666cb0-dda8-5a83-bf59-c2c3fa091000",
+            "title": "NIST-800-53r5 RA-5",
+            "description": "dependency-scan: rc-nonzero. Status not-satisfied (rc-nonzero).",
+            "props": [
+              {
+                "name": "assessment-status",
+                "value": "not-satisfied",
+                "ns": "urn:receipts-to-oscal:1"
+              },
+              {
+                "name": "finding-reason",
+                "value": "rc-nonzero",
+                "ns": "urn:receipts-to-oscal:1"
+              },
+              {
+                "name": "framework",
+                "value": "NIST-800-53r5",
+                "ns": "urn:receipts-to-oscal:1"
+              },
+              {
+                "name": "control-id",
+                "value": "RA-5",
+                "ns": "urn:receipts-to-oscal:1"
+              }
+            ],
+            "target": {
+              "type": "objective-id",
+              "target-id": "ra-5",
+              "status": {
+                "state": "not-satisfied",
+                "reason": "fail"
+              }
+            },
+            "related-observations": [
+              {
+                "observation-uuid": "15af0e4b-6d5a-59a5-a0a8-8d4f7c833faf"
+              }
+            ]
+          },
+          {
+            "uuid": "34bd33a5-8a73-5c47-92a3-d45cd74e92eb",
+            "title": "NIST-AI-RMF MEASURE 2.1",
+            "description": "eval-set-manifest: missing. Status not-assessed (no-receipt).",
+            "props": [
+              {
+                "name": "assessment-status",
+                "value": "not-assessed",
+                "ns": "urn:receipts-to-oscal:1"
+              },
+              {
+                "name": "finding-reason",
+                "value": "no-receipt",
+                "ns": "urn:receipts-to-oscal:1"
+              },
+              {
+                "name": "framework",
+                "value": "NIST-AI-RMF",
+                "ns": "urn:receipts-to-oscal:1"
+              },
+              {
+                "name": "control-id",
+                "value": "MEASURE 2.1",
+                "ns": "urn:receipts-to-oscal:1"
+              }
+            ],
+            "target": {
+              "type": "objective-id",
+              "target-id": "measure-2.1",
+              "status": {
+                "state": "not-satisfied",
+                "reason": "other"
+              }
+            },
+            "related-observations": []
+          },
+          {
+            "uuid": "52f655b5-204e-5105-981f-85960e3e3bb1",
+            "title": "NIST-AI-RMF MEASURE 2.5",
+            "description": "eval-regression: ok. Status satisfied (ok).",
+            "props": [
+              {
+                "name": "assessment-status",
+                "value": "satisfied",
+                "ns": "urn:receipts-to-oscal:1"
+              },
+              {
+                "name": "finding-reason",
+                "value": "ok",
+                "ns": "urn:receipts-to-oscal:1"
+              },
+              {
+                "name": "framework",
+                "value": "NIST-AI-RMF",
+                "ns": "urn:receipts-to-oscal:1"
+              },
+              {
+                "name": "control-id",
+                "value": "MEASURE 2.5",
+                "ns": "urn:receipts-to-oscal:1"
+              }
+            ],
+            "target": {
+              "type": "objective-id",
+              "target-id": "measure-2.5",
+              "status": {
+                "state": "satisfied",
+                "reason": "pass"
+              }
+            },
+            "related-observations": [
+              {
+                "observation-uuid": "cf2e3dc7-6d5a-5cdf-b045-cba9d84b6edf"
+              }
+            ]
+          },
+          {
+            "uuid": "f0c9e391-9c48-5a21-89bf-77d139d45c42",
+            "title": "NIST-AI-RMF MEASURE 2.7",
+            "description": "adversarial-eval: stale. Status not-satisfied (stale).",
+            "props": [
+              {
+                "name": "assessment-status",
+                "value": "not-satisfied",
+                "ns": "urn:receipts-to-oscal:1"
+              },
+              {
+                "name": "finding-reason",
+                "value": "stale",
+                "ns": "urn:receipts-to-oscal:1"
+              },
+              {
+                "name": "framework",
+                "value": "NIST-AI-RMF",
+                "ns": "urn:receipts-to-oscal:1"
+              },
+              {
+                "name": "control-id",
+                "value": "MEASURE 2.7",
+                "ns": "urn:receipts-to-oscal:1"
+              }
+            ],
+            "target": {
+              "type": "objective-id",
+              "target-id": "measure-2.7",
+              "status": {
+                "state": "not-satisfied",
+                "reason": "fail"
+              }
+            },
+            "related-observations": [
+              {
+                "observation-uuid": "a9eef322-447d-5fc5-981b-dc9fe47af4b0"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
