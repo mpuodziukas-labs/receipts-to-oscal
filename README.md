@@ -147,7 +147,13 @@ A control with several gates is satisfied only when every one of its gates has a
 receipt. A failure outranks a gap: one failing gate makes the control `not-satisfied` even if
 another gate has no receipt.
 
-## Threat model and limits
+## Honesty statement
+
+- Every count in this README is reproduced by `python3 check.py` on a fresh clone. No number is entered by hand.
+- The fixtures plant every failure case listed above, and the mutation harness breaks the tool 24 ways. The selftests must catch every one, or the check fails.
+- A control with no evidence is reported as a gap, never as a pass.
+
+## Limitations and threat model
 
 In scope: someone edits the OSCAL file after generation, edits or swaps a receipt, drops or reorders
 observations, reports a gap as a pass, or leaves a stale or failing result looking current.
